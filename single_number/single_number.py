@@ -2,10 +2,20 @@
 Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
+
+
 def single_number(arr):
     # Your code here
-
-    pass
+    arr = sorted(arr)
+    i = 0
+    j = 1
+    while j < len(arr):
+        if arr[i] != arr[j]:
+            return arr[i]
+        i += 2
+        j += 2
+    # base case largest number IS the only one of it's kind
+    return arr[len(arr) - 1]
 
 
 if __name__ == '__main__':
